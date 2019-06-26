@@ -1,0 +1,1785 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+// ::placeholder
+// 	color: #666
+/***************** MIXINS **************/
+
+
+ 
+/*********************** CUSTOM FONTS *****************************/
+
+@mixin MontReg()
+	font-family: 'Montserrat', sans-serif
+	font-weight: 400
+
+@mixin MontBold()
+	font-family: 'Montserrat', sans-serif
+	font-weight: 700
+
+@mixin MontBlack()
+	font-family: 'Montserrat', sans-serif
+	font-weight: 900
+
+@mixin MontMed()
+	font-family: 'Montserrat', sans-serif
+	font-weight: 500
+
+@mixin RobotoMed()
+	font-family: 'Roboto', sans-serif
+	font-weight: 500
+
+@mixin RobotoBold()
+	font-family: 'Roboto', sans-serif
+	font-weight: 700
+
+
+/************ CUSTOM STYLES ********************/
+
+*
+	margin: 0
+	padding: 0
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+
+a 
+	text-decoration: none
+
+
+button 
+	outline: none
+	cursor: pointer
+	border: none
+
+section
+	position: relative
+
+
+body, html
+	font-size: 100%
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+
+body
+	@include MontReg()
+
+
+.blue
+	background-color: $blue
+
+// button styles
+ 
+.button
+	max-width: 210px
+	width: 100%
+	display: inline-block 	
+	font-size: 18px
+	padding: 12px 0
+	text-align: center
+	text-decoration: none
+	transition: all .3s ease
+	line-height: 1
+
+	&:hover, &:focus, &:active
+		color: #fff
+		text-decoration: none
+		background-color: $blue
+		box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.25)
+
+
+// HEADER 
+
+
+.s_head
+	height: 700px
+	width: 100%
+
+.header
+	position: relative
+	z-index: 20
+
+.rating_main_slider_wrap
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+
+
+.rating_main_slide
+	z-index: 1
+	width: 100%
+	height: 700px
+	background-size: cover
+	background-position: center
+	position: absolute
+	top: 0
+	left: 0
+
+	&.slick-active
+
+		.slide_txt
+			opacity: 1
+			left: 0
+
+
+	&::after
+		content: ''
+		position: absolute
+		width: 100%	
+		height: 100%
+		top: 0
+		left: 0
+		z-index: 1
+		bottom: 0
+		right: 0
+		background-color: rgba(#273341,.55)
+
+
+.header
+	padding: 20px 0 0 0
+
+.rating_logo
+	display: flex
+	align-items: center
+
+	img
+		max-width: 150px
+		width: 100%
+		display: block
+		height: auto
+
+.header_nav
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+	
+	ul
+		margin: 0
+		display: flex
+		list-style-type: none
+		justify-content: space-between
+
+		li
+			position: relative
+			padding: 0 0 3px 0
+			
+			&::after
+				content: ''
+				width: 100%
+				height: 2px 
+				background-color: #fff
+				position: absolute
+				bottom: 0
+				left: 0
+				opacity: 0
+				transition: opacity .3s ease
+
+		
+			&.active_link
+
+				&::after
+					opacity: 1
+					content: ''
+					width: 100%
+					height: 2px 
+					background-color: #fff
+					position: absolute
+					bottom: 0
+					left: 0
+
+			&:hover
+				
+				&::after
+					opacity: 1 
+		
+		a
+			text-decoration: none
+			display: block
+			color: #fff
+			@include RobotoBold()
+			font-size: 15px
+
+.header_add
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+	display: flex
+	color: #ffffff
+	@include MontBold()
+	font-size: 13px
+	text-transform: uppercase
+	text-decoration: none
+	display: flex
+	align-items: center
+
+	&:hover
+		color: #fff
+		text-decoration: none
+
+	img
+		width: 25px
+		height: auto
+		display: block
+		margin: 0 10px 0 0
+
+.slide_txt_wr
+	z-index: 10
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+
+.slide_txt
+	transition: left .7s ease, opacity .7s ease
+	position: relative
+	left: -100px
+	opacity: 0
+	max-width: 800px
+	margin-left: 120px
+
+	h2
+		color: #fff
+		@include MontBlack()
+		font-size: 72px
+		margin: 0
+		line-height: 1.2
+
+	p
+		@include MontReg()
+		font-size: 36px
+		color: #fff
+
+	a
+		color: #ffffff
+		text-decoration: none
+		margin-left: 40px
+		display: flex
+		align-items: center
+		@include MontMed()
+		padding: 10px 0
+		margin-top: 20px
+
+		img
+			transition: margin-left .3s ease
+			width: 24px
+			height: 24px
+			display: block
+			margin-left: 15px
+
+		&:hover
+
+			img
+				margin-left: 25px
+
+
+.main_slider_nav
+	position: relative
+	top: 35%
+	transform: translateY(-50%)
+	z-index: 10
+	display: flex
+
+.progress_block
+	display: flex
+	justify-content: space-between
+	
+.main_slide_arr
+	width: 45px
+	height: 45px
+	border-radius: 50%
+	border: 2px solid rgba(#fff, .25)
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	transition: transform .3s ease, border-color .3s ease
+
+	img
+		width: 24px
+		height: 24px
+		display: block
+		position: relative
+		transition: transform .3s ease, opacity .3s ease
+
+	&:hover
+		transform: translateX(-10px)
+		border-color: #fff
+
+		img
+			transform: translateX(-5px)
+			
+
+	.arr_right
+		position: relative
+		transform: rotate(180deg)
+
+.main_slide_arr_right
+
+	&:hover
+		transform: translateX(10px)
+		border-color: #fff
+
+		img
+			transform: translateX(5px) rotate(180deg)
+
+.curr_slide_wr
+	position: absolute
+	top: 77%
+	left: 50%
+	transform: translate(-50%, -50%)
+	z-index: 10
+	display: flex
+	justify-content: flex-end
+
+.curr_slide
+	display: flex
+	flex-direction: column
+	align-items: center
+	margin-right: 10px
+
+	.slick-dots
+		position: relative
+		bottom: 0
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		li
+			margin: 0
+			width: 11px
+			height: 2px
+			margin-bottom: 10px
+			display: block
+			margin-bottom: 10px
+			
+			button
+				padding: 0
+				display: block
+				cursor: pointer
+				width: 11px
+				height: 2px
+				background-color: rgba(#F3F5F8, .45)
+				outline: none
+				transition: width .3s ease, background-color .3s ease
+				
+				&::before
+					display: none
+					content: ''
+
+			&.slick-active
+				width: 21px
+				
+				button
+					width: 21px
+					background-color: rgba(#F3F5F8, 1)
+
+
+.slider_info
+	position: relative
+	margin-top: 400px
+	position: relative
+
+.mouse_wr
+	position: relative
+	left: -10px
+
+.mouse_txt
+	position: relative
+
+	&::after
+		@include MontReg()
+		font-size: 14px
+		color: rgba(#fff, .55)
+		content: 'Scroll'
+		position: absolute
+		transform: rotate(-90deg)
+		left: 0
+		top: 0
+
+.mouse_img
+	padding-top: 80px
+
+#mouse_down 
+	position: relative
+	animation: mouse_doing 2s infinite
+
+
+.search_panel
+	position: absolute
+	left: 50%
+	transform: translateX(-50%)
+	bottom: -30px
+	z-index: 3
+	width: 100%
+
+.search_form
+	max-width: 1200px
+	width: 100%
+	display: flex
+	margin: auto
+	position: relative
+
+	.search_inp
+		box-shadow: 0px 4px 50px rgba(145, 157, 178, 0.5)
+		width: 100%
+		display: block 
+		padding: 25px 20px
+		outline: none
+		border: none
+		color: $text_dark
+		@include MontReg()
+		font-size: 14px
+
+	.butt_search
+		width: 50px
+		height: 50px
+		background-color: $blue
+		position: relative
+		border-radius: 50%
+		top: 10px
+		left: -22px
+
+		&:focus
+			outline: none
+
+		img
+			transition: transform .3s ease
+			position: absolute
+			width: 25px
+			height: 25px
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			display: block
+
+		&:hover, &:focus
+
+			img
+				transform: translate(-50%, -50%) scale(.8) rotate(-10deg)
+
+.main_rating
+	margin-top: 100px
+
+// FILTERS ASIDE STYLE END
+
+.filter_label
+	@include RobotoMed()
+	font-size: 18px
+	color: $text_dark
+
+.filters_form_wr
+	// height: 670px
+	background-color: #F3F5F8
+	width: 100%
+	position: relative
+	margin-top: 30px
+	padding: 50px 0
+
+.rating_filter
+	display: flex
+	flex-direction: column
+	align-items: center
+	max-width: 210px
+	width: 100%
+	margin: auto
+	color: $text_dark
+
+
+.city_filter
+	width: 100%
+	font-size: 14px
+	display: block
+	border: none
+	background-color: transparent
+	border-bottom: 1px solid #e1e6ef
+	outline: none
+	transition: border-color .3s ease
+	margin-bottom: 50px
+
+	&::placeholder
+		color: $text_dark
+
+	&:focus
+		border-color: $blue
+
+// input [type=range]
+
+
+.range-control 
+	position: relative
+	width: 100%
+	margin-bottom: 50px
+
+
+input[type=range] 
+	display: block
+	width: 100%
+	margin: 15px 0
+	-webkit-appearance: none
+	outline: none
+
+
+input[type=range]::-webkit-slider-runnable-track 
+	position: relative
+	height: 5px
+	border: 1px solid $blue
+	background-color: $blue
+	box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.1)
+
+
+input[type=range]::-webkit-slider-thumb 
+	position: relative
+	top: -5px
+	width: 15px
+	height: 15px
+	border: 1px solid #fff
+	-webkit-appearance: none
+	background-color: $blue
+	box-shadow: inset 0 -1px 2px 0 rgba(0, 0, 0, 0.25)
+	border-radius: 100%
+	cursor: pointer
+
+
+output 
+	position: absolute
+	top: -32px
+	display: none
+	width: 50px
+	height: 24px
+	border: 1px solid #e2e2e2
+	background-color: #fff
+	border-radius: 3px
+	color: #777
+	font-size: .8em
+	line-height: 24px
+	text-align: center
+
+
+input[type=range]:active + output 
+	display: block
+	transform: translateX(-50%)
+
+.build_status_filter
+	margin-bottom: 30px
+	width: 100%
+
+	.filter_name
+		font-size: 14px
+		color: $text_dark
+		margin-bottom: 20px
+
+	.butt_group
+		margin-top: 20px
+		
+
+	.butt_pattern
+		display: inline-block
+		max-width: 88px
+		width: 100%
+		border: 1px solid #E1E6EF
+		margin-bottom: 15px
+		padding: 7px 12px
+		font-size: 14px
+		text-align: center
+		cursor: pointer
+
+		&.active
+			background-color: $blue
+			color: #fff
+
+		&:nth-child(odd)
+			margin-right: 29px
+
+.stars_filter_wr
+	width: 100%
+	
+	.stars_filter
+		margin-top: 5px
+
+// FILTERS ASIDE STYLE END
+
+
+.nav_block
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	.list_label
+		@include RobotoMed()
+		color: $text_dark
+
+	.ratings
+		max-width: 835px
+
+		ul, li
+			list-style-type: none
+			margin: 0
+			padding: 0
+
+		ul
+			display: flex
+			width: 100%
+
+		a
+			text-align: center
+			color: $text_dark
+			font-size: 14px
+			text-decoration: none
+			display: block
+			padding: 10px 30px
+			border: 1px solid #E1E6EF
+			background-color: #fff
+
+		li
+
+			&.active
+
+				a
+					color: #ffffff
+					background-color: $blue
+					border-color: $blue
+
+
+.stars
+
+	.fa-star
+		color: #EFCE4A
+		margin: 0 2px
+		text-decoration: none
+	
+	.far.fa-star
+		color: $text_dark
+
+
+.build_item
+	margin-bottom: 25px
+	box-sizing: border-box
+
+	&.adv
+		border: 1px solid #E1E6EF
+		padding: 7px
+
+		.build_place
+			position: relative
+			top: 50%
+			transform: translateY(-50%)
+			left: -7px
+			
+			p
+				@include MontMed()
+				font-size: 24px
+				transform: rotate(-90deg)
+
+.items_block
+	margin-top: 30px
+
+
+.items_slider
+
+	.slick-track
+		height: 300px
+
+.card
+	box-shadow: 0px 4px 50px rgba(145, 157, 178, 0.25)
+
+.build_place
+	@include RobotoBold()
+	font-weight: 800
+	font-size: 48px
+
+	.star_mob
+		position: relative
+
+	p
+		color: #939BAB
+		display: flex
+		align-items: center
+
+		&.win_place
+			position: relative
+			color: $yellow
+
+			&::after
+				content: ''
+				left: 30px
+				position: absolute
+				width: 25px
+				height: 25px
+				background-image: url(../img/trophy.svg)
+				background-size: cover
+				background-position: center
+		
+		span
+			font-size: 18px
+			padding-left: 40px
+			@include MontReg()
+
+
+		&.second_place
+			position: relative
+			color: #C4C8C9
+
+			&::after
+				content: ''
+				left: 30px
+				position: absolute
+				width: 25px
+				height: 25px
+				background-image: url(../img/trophy2.svg)
+				background-size: cover
+				background-position: center
+
+		&.third_place
+			position: relative
+			color: $bronze
+
+			&::after
+				content: ''
+				left: 30px
+				position: absolute
+				width: 25px
+				height: 25px
+				background-image: url(../img/trophy3.svg)
+				background-size: cover
+				background-position: center
+
+.items_slider_wr
+	position: relative
+
+	.add_to
+		display: flex
+		position: absolute
+		z-index: 5
+		top: 20px
+		right: 20px
+		width: 80px
+		justify-content: space-between
+
+		a
+			display: block
+			width: 32px
+			height: 32px
+			margin: 0
+	
+	.nav_mob
+		display: flex
+		justify-content: space-between
+		width: 100%
+		position: absolute
+		top: 50%
+
+		.next_mob, .prev_mob
+			background-color: rgba($text_dark, .25)
+			width: 25px
+			height: 30px
+			outline: none
+			position: relative
+
+			&:focus, &:active
+				outline: none
+
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				width: 24px
+				height: 24px
+				transform: translate(-50%, -50%)
+
+		.next_mob
+
+			img
+				transform: scale(-1, 1) translate(-50%,-50%)
+				transform-origin: center
+				left: -10px
+
+
+.items_slider
+	position: relative
+	height: 300px
+
+
+.build_imges
+	position: relative
+	height: 100%
+
+.build_img
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background-size: cover
+	background-position: center
+
+
+.info_build
+	padding: 40px 30px 40px 0
+
+.top_inf
+	display: flex
+	justify-content: space-between
+	position: relative
+	border-bottom: 1px solid #E1E6EF
+
+	.buil_name
+		@include MontMed()
+		font-size: 24px
+
+	.addr
+		font-size: 14px
+		display: flex
+		align-items: center
+		margin-top: 10px
+
+		img
+			width: 15px
+			height: 15px
+			margin-right: 10px
+
+	.stars_build
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		margin-top: 10px
+
+		span
+			margin-bottom: 7px
+
+.middle_inf
+	padding: 25px 0
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	.inf_itms
+		display: flex
+		max-width: 270px
+		width: 100%
+		justify-content: space-between
+
+		.itm
+			display: flex
+			flex-direction: column
+			align-items: center
+
+		img
+			width: 25px
+			height: 25px
+			display: block
+
+		span
+			color: $text_dark
+			font-size: 14px
+			margin-top: 12px
+
+	.price_label
+		@include MontBold()
+		font-size: 18px
+
+.bottom_inf
+	display: flex
+	justify-content: space-between
+	padding-top: 10px
+	align-items: center
+
+	.build_site
+		text-decoration: underline
+		color: $link_blue
+		font-size: 14px
+
+	.more_details
+		background-color: $blue
+		max-width: 200px
+		color: #ffffff
+		font-size: 14px
+		display: flex
+		align-items: center
+		width: 100%
+		border-radius: 30px
+		padding: 13px 0
+		justify-content: center
+		position: relative
+
+		.more_txt
+			left: -20px
+			@include MontBold()
+			font-size: 14px
+			position: relative
+			transition: left .3s ease
+			z-index: 3
+
+		.img_bg
+			width: 37px
+			height: 37px
+			border-radius: 50%
+			display: block
+			background-color: $light_blue
+			position: absolute
+			display: flex
+			align-items: center
+			justify-content: center
+			right: 6px
+			transition: width .3s ease, border-radius .3s ease
+			z-index: 2
+
+		img
+			transform: rotate(180deg)
+			width: 25px
+			height: 25px
+			transition: margin-left .3s ease
+
+		&:hover
+			text-decoration: none
+
+			.img_bg
+				width: 94%
+				border-radius: 20px
+				justify-content: flex-start
+
+			img
+				margin-left: 20px
+
+			.more_txt
+				left: 10px
+
+.price_label_mob
+	width: 120px
+	padding: 10px 8px
+	background-color: $blue
+	color: #ffffff
+	line-height: 1
+	display: flex
+	justify-content: space-between
+	font-size: 12px
+
+	span
+		margin: 0!important
+		@include MontBold()
+
+	sup
+		top: -.1em
+
+.metro_label
+	margin: 15px 0 0 0
+	display: flex
+	align-items: center
+
+	svg
+		width: 15px
+		height: 15px
+		display: block
+		margin-right: 5px
+
+		&.frst_line
+
+			path
+				fill: green
+
+		&.scnd_line
+
+			path
+				fill: red
+
+		&.third_line
+
+			path
+				fill: blue
+
+	.metro_info
+		font-size: 14px
+		color: $text_dark
+
+
+.seo_txt
+	position: relative
+	margin: 50px 0
+	overflow: hidden
+	transition: all .3s ease
+	max-height: 400px
+
+	&.blur
+		max-height: 100px
+
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			height: 100%
+			width: 100%
+			pointer-events: none
+			background-image: linear-gradient(to bottom, rgba(255,255,255,0), #fff 90%)
+
+.butt_wr
+	text-align: center
+	width: 100%	
+
+	.butt_txt
+		box-shadow: 0px 4px 4px rgba(145, 157, 178, 0.25)
+		cursor: pointer
+		padding: 10px 0 
+		display: inline-block
+		text-align: center
+		max-width: 210px
+		width: 100%
+		border-radius: 30px
+		background-color: #EBEFF1
+		font-size: 15px
+		position: relative
+
+		.less
+			position: absolute
+			left: 40%
+			top: 50%
+			transform: translate(-50%, -50%)
+			display: none
+
+		.more
+			position: absolute
+			left: 40%
+			top: 50%
+			transform: translate(-50%, -50%)
+
+		img
+			position: relative
+			width: 20px
+			height: 20px
+			margin-left: 70px
+			transform: rotate(180deg)
+			transform-origin: center center
+			transition: transform .3s ease
+
+			&.img_rotate
+				transform: rotate(0deg)
+
+		.svg path
+			fill: #fff!important
+
+
+.pagination_wrapper
+	max-width: 325px
+	margin: 50px auto 0
+	position: relative
+	width: 100%
+
+	ul
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	ul, li
+		list-style-type: none
+
+	img
+		font-size: 15px
+		height: 15px
+		display: block
+
+	a
+		padding: 5px
+		color: #8992A4
+		text-decoration: none
+
+	li
+
+		a
+			color: $text_dark
+			display: flex
+			align-items: center
+
+		&.prev, &.next 
+			
+			path
+				fill: $blue
+
+		&.next 
+			transform: rotate(180deg)
+
+		&.disabled
+
+			path
+				fill: #8992A4
+
+// FOOTER
+
+.main_footer
+	box-shadow: -20px -1px 155px 1px #d9d9d9
+	background-color: #fff
+	margin-top: 50px
+	padding: 30px 0
+
+
+
+.logo_footer
+
+	img
+		max-width: 100%
+		display: block
+
+.copy
+	top: 50%
+	transform: translateY(-50%)
+	position: relative
+	@include MontMed()
+	font-size: 13px
+	color: $text_dark
+
+.email_form_wr
+	max-width: 510px
+	width: 100%
+	display: flex
+
+	.inp_bl
+		max-width: 270px
+		width: 100%
+		background-color: #F3F5F8
+		border-radius: 20px 0px 0px 20px
+		padding: 12px 0 12px
+
+	input
+		border: none
+		max-width: 210px
+		width: 100%
+		margin: auto
+		background-color: transparent
+		outline: none
+		display: block
+		border-bottom: 2px solid #E1E6EF
+		@include MontMed()
+		font-size: 13px
+
+		&::placeholder
+			color: $text_dark
+
+	button
+		border-radius: 0px 20px 20px 0px
+		max-width: 280px
+		width: 100%
+		background-color: #1384FF
+		color: #fff
+		@include MontMed()
+		font-size: 13px
+		padding: 12px 0
+
+		img
+			display: inline-block
+			margin-left: 10px
+			width: 15px
+			height: 15px
+
+.soc_icons
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+
+	a
+		margin-left: 15px
+		color: #8992A4
+
+	.fab
+		font-size: 22px
+		
+.mob_nav
+	display: flex
+	justify-content: flex-end
+	align-items: center
+
+
+
+.search_mobile
+	position: relative
+
+	.butt_search_submit
+		display: none
+
+	svg
+		width: 15px
+		height: 15px
+		display: block
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+	.show_inp
+		display: none
+
+	.butt_open_search
+		// display: none
+
+	form
+		width: 30px
+		height: 30px
+		background-color: rgba(#273341, .25)
+		position: relative
+		border-radius: 50%
+		cursor: pointer
+
+	button
+		background: transparent
+		outline: none
+
+	.close_search
+		display: none
+		font-size: 30px
+		color: $text_dark
+
+
+	&.open_search_bl
+		width: 100%
+		position: absolute
+		display: flex
+		justify-content: flex-start
+		
+		form
+			height: 35px
+			background-color: #fff
+			display: flex
+			justify-content: space-between
+			margin-left: 30px
+			align-items: center
+			width: 60%
+			border-radius: 5px
+			padding: 10px 12px
+
+		button
+			position: relative
+			top: 50%
+			transform: translateY(-50%)
+			width: 15px
+			height: 15px
+
+		svg
+			position: absolute
+
+			path
+
+				fill: #1384FF
+
+		input
+			border: none
+			background: transparent
+			outline: none
+			margin-left: -50px
+			font-size: 15px
+
+			&::placeholder
+				color: $text_dark
+
+
+.wishlist, .compare_but
+	width: 31px
+	height: 31px
+	background-color: rgba(#273341, .25)
+	border-radius: 50%
+	position: relative
+	cursor: pointer
+
+	svg
+		top: 50%
+		left: 50%
+		position: absolute
+		transform: translate(-50%, -50%)
+
+.wishlist
+	margin: 0 15px
+
+	.wishlist_counter
+		position: absolute
+		@include MontBold()
+		font-size: 10px
+		color: #fff
+		right: 3px
+		bottom: 0
+
+.compare_but
+	margin-right: 30px
+
+.hamburger
+	padding: 0
+	height: 26px
+
+.slide_winner
+	position: relative
+	top: 100px
+	display: flex
+	align-items: center
+
+	img
+		display: block
+		width: 50px
+		height: 50px
+
+.medal_for
+	color: #fff
+	margin-left: 15px
+	
+	.winner_title
+		@include MontBlack()
+		font-size: 20px
+		line-height: 1.3
+
+	span
+		font-size: 14px
+
+.head_toggle_mob
+	position: fixed
+	width: 100%
+	left: 50%
+	transform: translateX(-50%)
+	z-index: 2
+
+// MOBILE MNU
+
+.mob_mnu
+	display: none
+	position: fixed
+	left: 0
+	bottom: 0
+	right: 0
+	top: 0
+	background-color: #365375
+	width: 100%
+	height: 100%
+	color: #fff
+
+.mob_toggle_nav
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+	display: flex
+	align-items: center
+	flex-direction: column
+	justify-content: center
+
+	ul, li
+		list-style-type: none
+	
+	li
+		padding: 7px 15px
+		margin-bottom: 10px
+
+		a
+			text-align: center
+			display: block
+			color: #ffffff
+			@include RobotoBold()
+			font-size: 18px
+	
+	.header_add
+		position: relative
+		top: 50px
+		font-size: 14px
+
+.mob_filters
+	margin: 0 auto 50px
+	max-width: 480px
+	width: 100%
+
+.star_mob
+	position: absolute
+	display: flex
+	align-items: center
+	color: $yellow
+	@include MontMed()
+	font-size: 16px
+	top: 2px
+
+	.fas
+		margin-right: 5px
+
+.mob_filters_nav
+	position: relative
+	display: flex
+	justify-content: space-between 
+
+	.select_rating, .filter_but
+		max-width: 225px
+		width: 100%
+
+	.select_rating
+		border-color: $blue
+		border-radius: 0
+		border-width: 2px
+		@include MontMed()
+		color: $text_dark
+
+	.filter_but
+		color: #ffffff
+		background-color: $blue
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 0 20px
+		transition: max-width .3s ease
+
+		.full_space
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: 100%
+
+
+		&.filter_but_open
+			max-width: 100%
+			position: absolute
+			height: 42px
+			justify-content: flex-start
+
+			.full_space
+				position: relative
+				margin-left: 30px
+				justify-content: flex-start
+
+			.no_open
+				display: none
+
+			.open
+				position: absolute
+				left: 15px
+				display: block
+
+
+		img
+			display: block
+			width: 20px
+			height: 20px
+
+		.open
+			display: none
+	
+
+.nice-select
+	
+	&::after
+		width: 8px
+		height: 8px
+
+	&.open 
+		
+		.list
+			width: 100%
+
+
+.filters_mob_wr
+	padding: 50px 0
+	display: none
+
+	&.filters_mob_wr_open
+		display: block
+
+	.rating_filter
+		max-width: 80%
+
+	.city_filter
+		font-size: 16px
+
+	.price_filter
+		margin-bottom: 30px
+		width: 100%
+		align-items: center
+		display: flex
+		justify-content: space-between
+
+		input
+			display: block
+			max-width: 80px
+			width: 100%
+			border: none
+			text-align: center
+			outline: none
+
+		.bl_price
+			padding: 5px 5px
+			border: 1px solid #e1e6ef
+			width: 100%
+			max-width: 150px
+			display: flex
+			justify-content: space-between
+
+	.build_status_filter 
+		margin-bottom: 20px
+		
+		.butt_pattern
+			max-width: 45%
+
+		.filter_name
+			font-size: 16px
+
+.rating_top_title
+	@include RobotoMed()
+	font-size: 18px
+	color: $text_dark
+	text-align: center
+	margin-bottom: 30px
+
+
+.instedof_slider
+	height: 100vh
+	position: absolute
+	left: 0
+	bottom: 0 
+	right: 0
+	z-index: 10
+	color: #ffffff
+	z-index: 10
+	top: 0
+	background-size: cover
+	background-position: center
+
+	&::after
+		content: ''
+		width: 100%
+		height: 100vh
+		position: absolute
+		background-color: rgba(#1384FF, .25)
+		left: 0
+		bottom: 0
+		right: 0
+		top: 0
+
+	&::before
+		content: ''
+		width: 100%
+		height: 100vh
+		position: absolute
+		background-color: rgba(#000, .4)
+		left: 0
+		bottom: 0
+		right: 0
+		top: 0
+
+.main_mob_txt
+	position: absolute
+	z-index: 10
+	top: 15%
+	width: 100%
+		
+	.prize
+
+		img
+			margin: auto
+			width: 100px
+			height: 100px
+			display: block
+
+	.mob_title
+		text-align: center
+		margin: 20px auto 0
+		max-width: 400px
+		font-size: 24px
+		@include MontBlack()
+
+	.arr_down
+
+		img
+			margin: 20px auto 0
+			display: block
+			width: 50px
+			height: 50px
+
+			
+.nominations
+	max-width: 230px
+	width: 100%
+	margin-top: 30px
+
+.nomination
+	margin-bottom: 30px
+	display: flex
+	align-items: center
+
+	img
+		margin-right: 20px
+		width: 45px
+		height: 45px
+		display: block
+
+	.nom_title
+		@include MontBlack()
+		font-size: 14px
+		line-height: 1.4
+
+	.nom_descr
+		font-size: 14px
+
+.rating_mob_itms
+	padding: 25px 25px
+
+	.rating_itm
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		&:not(:last-child)
+			margin-bottom: 20px
+
+		p
+			font-size: 18px
+			margin: 0
+
+
+.search_top
+	z-index: 40
+	display: none
+	width: 100%
+	position: fixed
+	height: 45px
+	top: 0
+	left: 0
+	background-color: #fff
+	box-shadow: 0 2px 7px #5981be
+	
+	form
+		width: 100%
+		display: flex
+		align-items: center
+		position: relative
+
+	input
+		max-width: 200px
+		width: 100%
+		border: none
+		background-color: #fff
+		outline: none
+		font-size: 12px
+		margin-left: 20px
+
+	.close_search
+		font-size: 30px
+		margin-left: 15px
+
+	button
+		background: transparent
+		outline: none
+		width: 20px
+		position: absolute
+		right: 15px
+		height: 20px
+
+		svg
+			width: 15px
+			display: block
+
+		path
+			fill: $blue
+
+.email_sender
+	font-size: 12px
+	text-align: center
+	margin: 25px 0 7px 0
+
+.bottom_mnu
+	max-width: 320px
+	margin: 0 auto 10px
+
+	.row_nav
+		display: flex
+
+	.row_nav1
+		justify-content: space-between
+		margin-bottom: 10px
+
+	.row_nav2
+		justify-content: space-around
+			
+
+	ul, li
+		list-style-type: none
+		margin: 0
+		padding: 0
+
+	a
+		text-decoration: none
+		@include RobotoMed()
+		font-weight: normal
+		font-size: 15px
+		color: #8992A4
+
+.rules_rating
+	max-width: 274px
+	width: 100%
+	margin: 27px auto 0
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+
+	img
+		display: block
+		width: 45px
+		height: 45px
+		margin: 0 auto 10px
+
+	a
+		text-decoration: underline
+		font-size: 12px
+		text-align: center
+		color: $text_dark
+
+
+
+
+// BURGER 
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+	background-color: #fff 
+
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner:after, .hamburger.is-active .hamburger-inner:before
+	background-color: #fff
+
+.hamburger.is-active:hover, .hamburger:hover
+	opacity: 1
+
+
+
+
+
+	  
+
+
+
+
+
+
+
+		
+			
+
+
+
+
+
+
+@keyframes mouse_doing
+	0%
+		transform: translateY(0)
+
+	50%
+		transform: translateY(4px)
+
+	100%
+		transform: translateY(0px)
+
+
+
+	
+
+
+			
+
+
+
+
+
+
+@import "media" // Always at the end
+ 

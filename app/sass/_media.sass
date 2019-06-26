@@ -1,0 +1,637 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+
+@media screen and (min-device-width: 1440px)
+
+  .container-fluid
+    max-width: 1415px
+    width: 100%
+
+@media screen and (max-device-width: 1440px) and (min-device-width: 1280px)
+
+  .container-fluid
+    max-width: 1300px
+    width: 100%
+
+  .header_add
+    font-size: 11px
+
+  .mouse_img 
+    padding-top: 60px
+
+  .nav_block 
+    
+    .ratings 
+      
+      a
+        padding: 10px 22px
+
+  .copy 
+    font-size: 12px
+
+.soc_icons
+  
+  a
+    margin-left: 12px
+
+  
+  
+@media screen and (max-device-width: 1280px) and (min-device-width: 1024px)
+
+  .container-fluid
+    max-width: 1020px
+    width: 100%
+
+  .header_add
+    font-size: 11px
+
+  .slide_txt 
+    
+    h2
+      font-size: 60px
+
+    p
+      font-size: 30px
+
+    a
+      margin-top: 10px
+      font-size: 15px
+      margin-left: 34px
+
+      img
+        width: 20px
+        height: 20px
+
+  .slider_info
+    margin-top: 377px
+
+  .mouse_img
+    padding-top: 66px
+
+  .curr_slide_wr
+    top: 72%
+
+  .nav_block 
+    
+    .ratings 
+
+      a
+        padding: 10px 12px
+        font-size: 11px
+
+  .filter_label
+    font-size: 16px 
+
+  .build_status_filter 
+    
+    .butt_pattern:nth-child(odd)
+      margin-right: 14px
+
+  .filters_form_wr
+    padding: 50px 15px
+
+  .info_build
+    padding: 30px 20px 30px 0
+
+  .build_title
+    max-width: 200px
+
+  .top_inf 
+    
+    .buil_name
+      font-size: 22px
+
+    .addr
+      font-size: 12px
+
+  .stars_build
+    font-size: 14px
+
+  .middle_inf 
+    
+    .price_label
+      margin-left: 20px
+      font-size: 16px
+
+    .inf_itms
+      max-width: 192px
+
+      span
+        font-size: 12px
+
+  .bottom_inf 
+    
+    .more_details
+      padding: 11px 0
+
+      .more_txt
+        font-size: 12px
+    
+      img
+        width: 20px
+        height: 20px
+
+      .img_bg
+        width: 36px
+        height: 34px
+
+  .copy 
+    font-size: 12px
+
+  .soc_icons
+    
+    a
+      margin-left: 12px
+
+  .email_form_wr 
+
+    button 
+      font-size: 11px
+
+      img
+        margin-left: 4px
+        width: 14px
+        height: 14px
+
+    input
+      max-width: 150px
+      font-size: 11px
+
+  .soc_icons 
+    
+    a
+      margin-left: 2px
+
+  .middle_inf
+    padding: 15px 0
+
+
+	
+@media screen and (max-device-width: 1024px) and (min-device-width: 768px)
+
+  .container-fluid
+    max-width: 730px
+    width: 100%
+
+  .curr_slide_wr
+    top: 50%
+
+  .slide_txt
+    margin: 0
+    max-width: 420px
+
+    h2
+      font-size: 36px
+      margin-bottom: 30px
+
+    p
+      font-size: 24px
+      line-height: 1.4
+
+    a
+      font-size: 16px
+      margin-left: 25px
+      margin-top: 10px
+
+      img
+        width: 20px
+        height: 20px
+
+  .main_rating
+    margin-top: 50px
+
+  .top_inf 
+    
+    .buil_name
+      font-size: 20px
+
+  .info_build
+    padding: 20px 30px 20px 0
+
+  .middle_inf 
+    
+    .inf_itms
+      margin: auto
+
+  .bottom_inf
+    
+    .price_label
+      @include MontBold()
+      order: 1
+
+    .build_site
+      order: 2
+
+  .build_item.adv 
+    
+    .build_place
+      top: 63%
+      left: 9px
+
+  .build_place 
+    
+    p
+      font-size: 36px
+
+      &.win_place, &.second_place, &.third_place
+
+        &::after
+          width: 20px
+          height: 20px
+          left: 25px
+      
+  .seo_txt
+    margin: 50px 0 25px
+
+  .logo_footer
+    display: block
+    margin: 0 auto
+    padding-bottom: 25px
+
+  .email_form_wr
+    margin: 0 auto 25px
+
+  .soc_icons
+    display: inline-block
+    left: 50%
+    transform: translateX(-50%)
+
+  .copy
+    text-align: center
+    margin-top: 10px
+
+  
+
+
+@media screen and (max-device-width: 768px) and (min-device-width: 570px)
+
+  .main_rating
+    margin-top: 10px
+
+  .build_item, .build_item.adv 
+    
+    .build_place
+      padding: 10px 0 15px 0
+      left: 0
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      p
+        transform: rotate(0)
+        margin: 0
+
+  .hide_bl
+    display: none
+
+  .card
+    box-shadow: none
+
+  .info_build
+    padding: 30px 10px 40px 10px
+
+  .top_inf .stars_build
+    margin-top: 0
+
+  .middle_inf 
+    
+    .inf_itms
+      max-width: 90%
+      margin: auto
+
+      img
+        width: 40px
+        height: 40px
+
+  .bottom_inf 
+    
+    .more_details
+      margin: auto
+
+  .build_item
+    border: 1px solid #e1e6ef
+    padding: 0px 10px
+
+  .seo_txt
+    padding: 0 15px
+    font-size: 14px
+    margin: 30px 0
+
+  .pagination_wrapper
+    margin: 30px auto 0
+
+  .logo_footer
+    display: block
+    margin: 0 auto
+    padding-bottom: 25px
+
+  .email_form_wr
+    margin: 0 auto 25px
+
+  .soc_icons
+    display: inline-block
+    left: 50%
+    transform: translateX(-50%)
+
+  .copy
+    text-align: center
+    margin-top: 10px
+     
+  
+
+@media screen and (max-device-width: 570px) and (min-device-width: 320px)
+
+  .header
+    padding: 15px 0 0
+
+  .main_rating
+    margin-top: 10px
+
+  .build_item, .build_item.adv 
+    
+    .build_place
+      padding: 10px 0 15px 0
+      left: 0
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      p
+        transform: rotate(0)
+        margin: 0
+        line-height: 1
+
+  .hide_bl
+    display: none
+
+  .card
+    box-shadow: none
+
+  .info_build
+    padding: 25px 0px 15px 0px
+
+  .build_title
+    // position: relative
+
+    // p
+    //   // position: absolute
+    //   // bottom: 0
+
+  .build_place 
+    
+    p 
+      
+      span
+        font-size: 14px
+
+  .metro_label 
+    
+    .metro_info
+      font-size: 10px
+
+  .price_label_mob
+    font-size: 9px
+    max-width: 94px
+
+  .top_inf 
+    padding-bottom: 20px
+    
+    .addr
+      margin-top: 20px
+      margin-bottom: 0
+      font-size: 10px
+
+    .stars_build
+      max-width: 116px
+      width: 100%
+      margin-top: 0
+
+    .buil_name
+      font-size: 14px
+
+  .middle_inf 
+    
+    .inf_itms
+      max-width: 90%
+      margin: auto
+
+      span
+        font-size: 12px
+        margin-top: 10px
+
+      img
+        width: 25px
+        height: 25px
+
+  .rating_mob_itms
+    padding: 0px 10px 10px
+
+    .rating_itm 
+      
+      p
+        font-size: 12px
+
+  .bottom_inf 
+    
+    .more_details
+      margin: auto
+
+  .build_item
+    border: 1px solid #e1e6ef
+    padding: 0px 10px
+
+  .seo_txt
+    padding: 0 15px
+    font-size: 12px
+    margin: 20px 0
+
+  .pagination_wrapper
+    margin: 20px auto 0
+    max-width: 240px
+
+  .logo_footer
+    display: block
+    margin: 0 auto
+    padding-bottom: 25px
+
+  .email_form_wr
+    margin: 0 auto 25px
+
+  .soc_icons
+    display: inline-block
+    left: 50%
+    transform: translateX(-50%)
+
+  .copy
+    text-align: center
+    font-size: 12px
+    margin-top: 15px
+
+  .hamburger
+    height: 20px
+
+  .hamburger-box
+    width: 24px
+    height: 20px
+
+  .hamburger--slider .hamburger-inner
+    top: 5px
+
+  .hamburger--slider .hamburger-inner:before
+    top: 6px
+
+  .hamburger--slider .hamburger-inner:after
+    top: 12px
+
+  .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+    width: 24px
+    height: 2px
+
+  .hamburger--slider.is-active .hamburger-inner:after
+    top: 20px
+
+  .hamburger--slider.is-active .hamburger-inner
+    top: 2px
+
+  .wishlist
+    margin: 0 10px
+
+  .compare_but
+    margin-right: 22px
+
+  .nomination
+    margin-bottom: 20px
+
+  .main_mob_txt
+    position: relative
+    margin-top: 25% 
+    
+    .mob_title
+      line-height: 1.3
+
+    .arr_down
+
+      img
+        position: absolute
+        top: 70vh
+        left: 50%
+        transform: translateX(-50%)
+        margin: 30px auto 0
+
+  .mob_filters_nav 
+    margin-top: 20px
+
+    .filter_but, .select_rating
+      max-width: 140px
+      font-size: 11px
+
+    .nice-select
+      height: 35px
+      line-height: 35px
+      padding-left: 4px
+
+      &::after
+        width: 6px
+        height: 6px
+        margin-top: -3px
+
+      .option
+        padding-left: 10px
+
+    .filter_but
+      
+      img
+        height: 15px
+        width: 15px
+
+  .s_head
+    height: 100vh
+
+  .mob_filters
+    margin: 0 auto 30px
+
+  .rating_top_title
+    margin-bottom: 10px
+
+  .items_slider 
+    height: 200px
+    
+    .slick-track
+      height: 200px
+
+  .items_slider_wr 
+    
+    .add_to
+      width: 75px
+      right: 13px
+      top: 13px
+
+  .stars .fa-star
+    font-size: 16px
+
+  .rating_mob_itms .rating_itm:not(:last-child)
+    margin-bottom: 12px
+
+  .logo_footer 
+      
+    img
+      max-width: 100px
+
+  .email_form_wr 
+    margin: 0 auto 10px
+    max-width: 290px
+
+    .inp_bl
+      padding: 8px 0 8px
+
+    input
+      border-width: 1px
+      max-width: 156px
+      font-size: 12px
+    
+    button
+      max-width: 93px
+      padding: 8px 0
+
+      img
+        margin-left: 0
+
+  .soc_icons
+    margin-bottom: 15px
+    margin-left: -10px
+
+    .fab
+      font-size: 20px
+    
+  .filters_mob_wr 
+    
+    .city_filter, .price_filter, .build_status_filter .filter_name
+      font-size: 14px
+
+    .city_filter
+      order: 2
+
+    .price_filter 
+      order: 3
+      
+      .bl_price
+        max-width: 110px
+
+  .build_status_filter
+    order: 4 
+    
+    .butt_pattern:nth-child(odd)
+      margin-right: 8%
+
+  .stars_filter_wr
+    order: 1
+    margin-bottom: 30px
+
+  
+      
+
+
+ 
